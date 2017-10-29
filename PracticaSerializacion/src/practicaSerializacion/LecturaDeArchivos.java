@@ -13,11 +13,11 @@ public class LecturaDeArchivos {
 	
 	
 public static void main(String[] args) {
-	//escribirArchivo("prueba.txt");
-	//leerArchivo("prueba.txt");
-	lecturaDeConsola();
+	//escribirArchivo("animales.txt");
+	leerArchivo("animales.txt");
+	//lecturaDeConsola();
 	
-	lecturaDeConsolaNumeros();
+	//lecturaDeConsolaNumeros();
 	System.out.println("Fin del programa! ");
 	
 }
@@ -26,9 +26,9 @@ public static void escribirArchivo(String archivo){
 	try {
 		FileOutputStream fos = new FileOutputStream(archivo);
 		OutputStreamWriter out = new OutputStreamWriter(fos);
-		out.write("Hola mundo");
+		out.write("No como animales");
 		out.write("\r\n");
-		out.write("Hola mundo");
+		out.write("Los animales tienen derecho de vivir!");
 		out.close();
 		
 		
@@ -40,12 +40,13 @@ public static void escribirArchivo(String archivo){
 public static void leerArchivo(String archivo){
 	try {
 		FileInputStream fis = new FileInputStream(archivo);
-		Scanner scanner = new Scanner(System.in);
+		Scanner scanner = new Scanner(fis);
 		String s1 = scanner.nextLine();
 		String s2 = scanner.nextLine();
 		scanner.close();
-		//System.out.println(s1);
-		//System.out.println(s2);
+		System.out.println("Contenido del archivo " + archivo + " : ");
+		System.out.println(s1);
+		System.out.println(s2);
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
@@ -74,4 +75,10 @@ public static void lecturaDeConsolaNumeros(){
 	}catch(IOException ex){
 		ex.printStackTrace();}
 }
+
+public static void leerArchivosXML(String archivo){
+	
+}
+
+
 }
