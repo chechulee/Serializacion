@@ -12,6 +12,38 @@ public class ArchivoJSON {
 	private int edad;
 	private ArrayList<String> telefonos;
 	
+
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+	public int getEdad() {
+		return edad;
+	}
+
+
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+
+
+	public ArrayList<String> getTelefonos() {
+		return telefonos;
+	}
+
+
+	public void setTelefonos(ArrayList<String> telefonos) {
+		this.telefonos = telefonos;
+	}
+
+
 	public void generarJSON(String archivo){
 	Gson gson = new GsonBuilder().setPrettyPrinting().create();
 	String json = gson.toJson(this);
@@ -44,6 +76,12 @@ public class ArchivoJSON {
 	
 	public static void main(String[] args) {
 		ArchivoJSON ajson = new ArchivoJSON();
+		ArchivoJSON ajson2 = new ArchivoJSON();
+	    ajson.setNombre("Adri");
+		ajson.setEdad(31);
+		ajson2.setNombre("Tamara");
+		ajson2.setEdad(21);
+	
 		ajson.generarJSON("archivoJSON.TXT");
 	//	ajson.leerJSON("Persona.txt");
 	}
